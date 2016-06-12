@@ -1,22 +1,53 @@
+const autoprefixer = require('autoprefixer');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
 const webpack = require('webpack');
 
+const PROD = process.env.NODE_ENV === 'production';
+
+const sassLoaders = [
+	'css-loader',
+	'postcss-loader',
+	'sass-loader?indentedSyntax=sass&includePaths[]=' + path.join(__dirname, 'source')
+]
+
 const config = {
-	devtool: 'eval-source-map',
-	entry: __dirname + '/source/App.js',
+	devtool: PROD ? 'hidden-source-map' : 'eval-source-map',
+	entry: {
+		app: [path.join(__dirname, 'source/App')]
+	},
 	output: {
-		path: __dirname + '/public',
-		filename: 'bundle.js'
+		path: path.join(__dirname, 'public'),
+		filename: '[name].js'
 	},
 	module: {
-		loaders: [{
-			test: /\.jsx?$/,
-			exclude: /node_modules/,
-			loader: 'babel',
-			query: {
-				presets: ['es2015', 'react']
+		loaders: [
+			{
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				loader: 'babel',
+				query: {
+					presets: ['es2015', 'react']
+				}
+			}, {
+				test: /\.(sass|scss)$/,
+				loader: ExtractTextWebpackPlugin.extract('style-loader', sassLoaders.join('!'))
 			}
-		}]
+		]
 	},
+	plugins: [
+		new ExtractTextWebpackPlugin('[name].css')
+	],
+	postcss: [
+		autoprefixer({
+			browsers: ['last 2 versions']
+		})
+	],
+	resolve: {
+    extensions: ['', '.js', '.jsx', '.sass', '.scss'],
+    modulesDirectories: ['node_modules'],
+    fallback: path.join(__dirname, 'node_modules')
+  },
 	devServer: {
 		contentBase: './public',
 		colors: true,
@@ -25,7 +56,7 @@ const config = {
 	}
 };
 
-if (process.env.NODE_ENV === 'production') {
+if (PROD) {
 	config.devtool = false;
 	config.plugins = [
 		new webpack.optimize.OccurenceOrderPlugin(),

@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 
+import Styles from './HelloWorld.sass'
+
 class HelloWorld extends Component {
 	render() {
-		return <h1>Hello World</h1>;
+		return (
+			<div className="blog">
+				<h1>Hello World</h1>
+			</div>
+		);
 	}
 }
 
