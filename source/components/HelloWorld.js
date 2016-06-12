@@ -5,7 +5,7 @@ import Styles from './HelloWorld.sass'
 class HelloWorld extends Component {
 	render() {
 		return (
-			<div className="blog">
+			<div className="hello-world">
 				<h1>Hello World</h1>
 			</div>
 		);
