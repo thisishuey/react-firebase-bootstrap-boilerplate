@@ -6,7 +6,7 @@ const webpack = require('webpack');
 const PROD = process.env.NODE_ENV === 'production';
 
 const sassLoaders = [
-	'css-loader',
+	'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
 	'postcss-loader',
 	'sass-loader?indentedSyntax=sass&includePaths[]=' + path.join(__dirname, 'source')
 ]
