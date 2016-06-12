@@ -3,9 +3,7 @@ import Spinner from '../icons/Spinner';
 import Styles from './Button.sass';
 
 class Button extends Component {
-	render() {
-		return <button className={Styles.primary}><Spinner /> {this.props.children}</button>;
-	}
+	render = () => <button className={Styles.primary}><Spinner /> {this.props.children}</button>;
 }
 
 export default Button

@@ -5,9 +5,7 @@ import Styles from './sass/styles.sass';
 import HelloWorld from './components/HelloWorld';
 
 class App extends Component {
-	render() {
-		return <HelloWorld />;
-	}
+	render = () => <HelloWorld />;
 }
 
 render(<App />, document.getElementById('react-mount'));
