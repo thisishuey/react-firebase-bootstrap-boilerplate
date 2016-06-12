@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Button from './Button'
-import Styles from './HelloWorld.sass'
+import Button from './Button';
+import Styles from './HelloWorld.sass';
 
 class HelloWorld extends Component {
 	render() {
