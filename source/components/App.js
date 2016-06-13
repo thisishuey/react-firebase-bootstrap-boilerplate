@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Button from './Button';
-import Container from './Container';
-import Navigation from './Navigation';
 import ClassNames from './ClassNames';
+
+import Navigation from './Navigation';
+import Container from './Container';
+import Button from './Button';
 
 class App extends Component {
 	render = () => (

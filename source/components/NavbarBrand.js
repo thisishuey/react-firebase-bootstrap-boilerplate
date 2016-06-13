@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Container from './Container';
 import ClassNames from './ClassNames';
 
 class NavbarBrand extends Component {
