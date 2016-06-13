@@ -3,7 +3,6 @@ import Nav from './Nav';
 import Navbar from './Navbar';
 import NavbarBrand from './NavbarBrand';
 import NavItem from './NavItem';
-import Styles from '../sass/styles';
 
 class Navigation extends Component {
 	render = () => (

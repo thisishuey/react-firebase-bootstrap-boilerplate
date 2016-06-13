@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Styles from '../sass/styles.sass';
+import ClassNames from '../components/ClassNames';
 
 class Spinner extends Component {
-	render = () => <i className={`${Styles.fa} ${Styles['fa-spinner']} ${Styles['fa-pulse']}`} />;
+	render = () => <i className={ClassNames('fa', 'fa-spinner', 'fa-pulse')} />;
 }
 
 export default Spinner
