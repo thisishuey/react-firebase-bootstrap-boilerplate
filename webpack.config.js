@@ -14,7 +14,7 @@ const sassLoaders = [
 const config = {
 	devtool: PROD ? 'hidden-source-map' : 'eval-source-map',
 	entry: {
-		app: [path.join(__dirname, 'source/App')]
+		main: [path.join(__dirname, 'source/main')]
 	},
 	output: {
 		path: path.join(__dirname, 'public'),
