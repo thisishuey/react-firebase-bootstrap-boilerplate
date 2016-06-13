@@ -8,11 +8,11 @@ import NavItem from './NavItem';
 class Navigation extends Component {
 	render = () => (
 		<Navbar>
-			<NavbarBrand>Project name</NavbarBrand>
+			<NavbarBrand href="#home">Project name</NavbarBrand>
 			<Nav>
-				<NavItem>Home</NavItem>
-				<NavItem>About</NavItem>
-				<NavItem>Contact</NavItem>
+				<NavItem href="#home">Home</NavItem>
+				<NavItem href="#about">About</NavItem>
+				<NavItem href="#contact">Contact</NavItem>
 			</Nav>
 		</Navbar>
 	);

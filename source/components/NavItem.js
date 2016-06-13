@@ -4,7 +4,7 @@ import ClassNames from './ClassNames';
 class NavItem extends Component {
 	render = () => (
 		<li className={ClassNames('nav-item')}>
-			<a className={ClassNames('nav-link')} href="#">{this.props.children}</a>
+			<a className={ClassNames('nav-link')} href={this.props.href}>{this.props.children}</a>
 		</li>
 	);
 }
