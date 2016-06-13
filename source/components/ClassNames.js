@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import styles from '../sass/styles';
+import styles from '../scss/styles';
 
 const ClassNames = classNames.bind(styles);
 
