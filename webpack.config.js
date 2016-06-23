@@ -25,10 +25,7 @@ const config = {
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
-				loader: 'babel',
-				query: {
-					presets: ['es2015', 'react', 'stage-0']
-				}
+				loader: 'babel'
 			}, {
 				test: /\.(sass|scss)$/,
 				loader: ExtractTextWebpackPlugin.extract('style-loader', sassLoaders.join('!'))
@@ -50,10 +47,10 @@ const config = {
 		})
 	],
 	resolve: {
-    extensions: ['', '.js', '.jsx', '.sass', '.scss'],
-    modulesDirectories: ['node_modules'],
-    fallback: path.join(__dirname, 'node_modules')
-  },
+    	extensions: ['', '.js', '.jsx', '.sass', '.scss'],
+    	modulesDirectories: ['node_modules'],
+    	fallback: path.join(__dirname, 'node_modules')
+	},
 	devServer: {
 		contentBase: './public',
 		colors: true,
