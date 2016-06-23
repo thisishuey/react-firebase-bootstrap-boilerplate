@@ -1,3 +1,5 @@
+// TODO: remove this once all the functionality has been implemented elsewhere
+
 import firebase from 'firebase';
 import firebaseConfig from '../../firebaseConfig';
 
