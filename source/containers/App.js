@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import classNames from '../utils/classNames';
 
-import { fetchTodos } from '../reducers/todos';
+import { fetchTodos } from '../actions';
 
 import Navigation from '../components/Navigation';
 import Todos from '../components/Todos';
