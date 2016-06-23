@@ -15,9 +15,7 @@ export const fetchTodosError = errors => ({ type: FETCH_TODOS_ERROR, payload: { 
 export const fetchTodos = () => {
 	return dispatch => {
 		dispatch(fetchTodosRequest());
-		return database.ref('todos').on('value', response => {
-			dispatch(fetchTodosSuccess(response.val()));
-		});
+		return database.ref('todos').on('value', response => dispatch(fetchTodosSuccess(response.val())));
 	};
 }
 
