@@ -12,7 +12,7 @@ Setting up a free Firebase account (https://firebase.google.com) is recommended 
 * Clean up Firebase/client integration - https://github.com/reactjs/redux/tree/master/examples/async
 * ~~Add redux~~
 * Add react-router - https://github.com/reactjs/redux/tree/master/examples/real-world
-* Add TDD setup
+* Add TDD setup - https://github.com/reactjs/redux/tree/master/examples/todomvc
 * ~~Add redux dev tools~~
 * Add eslint
 * Add Flow
