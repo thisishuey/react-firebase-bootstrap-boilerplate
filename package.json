@@ -1,46 +1,46 @@
 {
-  "name": "react-firebase-bootstrap-boilerplate",
-  "version": "1.0.0",
-  "description": "Boilerplate for react apps using firebase for services and bootstrap 4 for UI",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack-dev-server --progress",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thisishuey/react-firebase-bootstrap-boilerplate.git"
-  },
-  "author": "Jeff \"Huey\" Huelsbeck",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thisishuey/react-firebase-bootstrap-boilerplate/issues"
-  },
-  "homepage": "https://github.com/thisishuey/react-firebase-bootstrap-boilerplate#readme",
-  "dependencies": {
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0"
-  },
-  "devDependencies": {
-    "autoprefixer": "^6.3.6",
-    "babel-core": "^6.9.1",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-0": "^6.5.0",
-    "bootstrap": "^4.0.0-alpha.2",
-    "classnames": "^2.2.5",
-    "css-loader": "^0.23.1",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
-    "firebase": "^3.0.4",
-    "font-awesome": "^4.6.3",
-    "node-sass": "^3.7.0",
-    "postcss-loader": "^0.9.1",
-    "sass-loader": "^3.2.0",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
-  }
+	"name": "react-firebase-bootstrap-boilerplate",
+	"version": "1.0.0",
+	"description": "Boilerplate for react apps using firebase for services and bootstrap 4 for UI",
+	"main": "index.js",
+	"scripts": {
+		"start": "webpack-dev-server --progress",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/thisishuey/react-firebase-bootstrap-boilerplate.git"
+	},
+	"author": "Jeff \"Huey\" Huelsbeck",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/thisishuey/react-firebase-bootstrap-boilerplate/issues"
+	},
+	"homepage": "https://github.com/thisishuey/react-firebase-bootstrap-boilerplate#readme",
+	"dependencies": {
+		"react": "^15.1.0",
+		"react-dom": "^15.1.0"
+	},
+	"devDependencies": {
+		"autoprefixer": "^6.3.6",
+		"babel-core": "^6.9.1",
+		"babel-loader": "^6.2.4",
+		"babel-preset-es2015": "^6.9.0",
+		"babel-preset-react": "^6.5.0",
+		"babel-preset-stage-0": "^6.5.0",
+		"bootstrap": "^4.0.0-alpha.2",
+		"classnames": "^2.2.5",
+		"css-loader": "^0.23.1",
+		"extract-text-webpack-plugin": "^1.0.1",
+		"file-loader": "^0.8.5",
+		"firebase": "^3.0.4",
+		"font-awesome": "^4.6.3",
+		"node-sass": "^3.7.0",
+		"postcss-loader": "^0.9.1",
+		"sass-loader": "^3.2.0",
+		"style-loader": "^0.13.1",
+		"url-loader": "^0.5.7",
+		"webpack": "^1.13.1",
+		"webpack-dev-server": "^1.14.1"
+	}
 }
