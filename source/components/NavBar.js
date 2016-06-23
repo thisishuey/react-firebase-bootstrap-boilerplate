@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import ClassNames from './ClassNames';
+import classNames from '../utils/classNames';
 
 class Navbar extends Component {
 	render = () => {
-		return <nav className={ClassNames('navbar', 'navbar-fixed-top', 'navbar-dark', 'bg-inverse')}>{this.props.children}</nav>;
+		return <nav className={classNames('navbar', 'navbar-fixed-top', 'navbar-dark', 'bg-inverse')}>{this.props.children}</nav>;
 	};
 }
 

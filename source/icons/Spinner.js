@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ClassNames from '../components/ClassNames';
+import classNames from '../utils/classNames';
 
 class Spinner extends Component {
-	render = () => <i className={ClassNames('fa', 'fa-spinner', 'fa-pulse')} />;
+	render = () => <i className={classNames('fa', 'fa-spinner', 'fa-pulse')} />;
 }
 
 export default Spinner

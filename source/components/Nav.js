@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ClassNames from './ClassNames';
+import classNames from '../utils/classNames';
 
 class Nav extends Component {
-	render = () => <ul className={ClassNames('nav', 'navbar-nav')}>{this.props.children}</ul>;
+	render = () => <ul className={classNames('nav', 'navbar-nav')}>{this.props.children}</ul>;
 }
 
 export default Nav

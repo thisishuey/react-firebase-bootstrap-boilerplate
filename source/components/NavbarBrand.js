@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ClassNames from './ClassNames';
+import classNames from '../utils/classNames';
 
 class NavbarBrand extends Component {
-	render = () => <a className={ClassNames('navbar-brand')} href={this.props.href}>{this.props.children}</a>;
+	render = () => <a className={classNames('navbar-brand')} href={this.props.href}>{this.props.children}</a>;
 }
 
 export default NavbarBrand

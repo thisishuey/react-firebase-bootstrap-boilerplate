@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import ClassNames from './ClassNames';
+import classNames from '../utils/classNames';
 
 class NavItem extends Component {
 	render = () => (
-		<li className={ClassNames('nav-item')}>
-			<a className={ClassNames('nav-link')} href={this.props.href}>{this.props.children}</a>
+		<li className={classNames('nav-item')}>
+			<a className={classNames('nav-link')} href={this.props.href}>{this.props.children}</a>
 		</li>
 	);
 }
