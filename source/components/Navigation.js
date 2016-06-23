@@ -8,9 +8,9 @@ import NavItem from './NavItem';
 class Navigation extends Component {
 	render = () => (
 		<Navbar>
-			<NavbarBrand href="#home">Project name</NavbarBrand>
+			<NavbarBrand href="#">React Todo</NavbarBrand>
 			<Nav>
-				<NavItem href="#home">Home</NavItem>
+				<NavItem href="#">Home</NavItem>
 				<NavItem href="#about">About</NavItem>
 				<NavItem href="#contact">Contact</NavItem>
 			</Nav>
