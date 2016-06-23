@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import classNames from '../utils/classNames';
 
-import { fetchTodos } from '../actions';
+import { readTodos, createTodo, updateTodo, deleteTodo } from '../actions';
 
 import Navigation from '../components/Navigation';
 import Todos from '../components/Todos';
@@ -13,7 +13,10 @@ import Button from '../components/Button';
 class App extends Component {
 
 	componentDidMount() {
-		this.props.fetchTodos();
+		this.props.createTodo({ title: 'todo - ' + new Date() });
+		this.props.readTodos();
+		this.props.updateTodo('-KKvLQIvaISybYy93l9Q', { title: 'todo - ' + new Date() });
+		this.props.deleteTodo('-KKvLQIvaISybYy93l9Q');
 	}
 
 	render() {
@@ -47,9 +50,10 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		fetchTodos: () => {
-			dispatch(fetchTodos());
-		}
+		createTodo: todo => dispatch(createTodo(todo)),
+		readTodos: () => dispatch(readTodos()),
+		updateTodo: (todoId, todo) => dispatch(updateTodo(todoId, todo)),
+		deleteTodo: todoId => dispatch(deleteTodo(todoId))
 	};
 };
 
