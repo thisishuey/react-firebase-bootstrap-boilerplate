@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchTodos } from '../redux/modules/todos';
+import { fetchTodos } from '../reducers/todos';
 
 import Spinner from '../icons/Spinner';
 

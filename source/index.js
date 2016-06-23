@@ -1,6 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-
+import { Provider } from 'react-redux';
 import App from './components/App';
+import configureStore from './store/configureStore';
 
-render(<App />, document.getElementById('react-mount'));
+const store = configureStore()
+
+let devToolsElement;
+
+if (process.env.NODE_ENV !== 'production') {
+	const DevTools = require('./components/DevTools').default;
+	devToolsElement = (<DevTools />);
+}
+
+render(
+	<Provider store={store}>
+		<div>
+			<App />
+			{devToolsElement}
+		</div>
+	</Provider>,
+	document.getElementById('root')
+);

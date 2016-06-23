@@ -1,13 +1,11 @@
 import { compose, createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import reducer from './modules/reducer';
+import rootReducer from '../reducers';
 
 let createStoreWithMiddleware;
 
 if (process.env.NODE_ENV === 'production') {
-	createStoreWithMiddleware = compose(
-		applyMiddleware(thunkMiddleware)
-	)(createStore);
+	createStoreWithMiddleware = compose(applyMiddleware(thunkMiddleware))(createStore);
 } else {
 	const { persistState } = require('redux-devtools');
 	const DevTools = require('../components/DevTools').default;
@@ -23,5 +21,5 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 export default function configureStore(initialState) {
-	return createStoreWithMiddleware(reducer, initialState);
+	return createStoreWithMiddleware(rootReducer, initialState);
 }
