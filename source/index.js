@@ -9,7 +9,7 @@ const store = configureStore()
 let devToolsElement;
 
 if (process.env.NODE_ENV !== 'production') {
-	const DevTools = require('./components/DevTools').default;
+	const DevTools = require('./containers/DevTools').default;
 	devToolsElement = (<DevTools />);
 }
 
