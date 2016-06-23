@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ClassNames from './ClassNames';
+import classNames from '../utils/classNames';
 
 class Container extends Component {
-	render = () => <div className={ClassNames('container')}>{this.props.children}</div>;
+	render = () => <div className={classNames('container')}>{this.props.children}</div>;
 }
 
 export default Container
