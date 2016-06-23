@@ -61,22 +61,22 @@ $spacer:                     1rem !default;
 $spacer-x:                   $spacer !default;
 $spacer-y:                   $spacer !default;
 $spacers: (
-  0: (
-    x:   0,
-    y:   0
-  ),
-  1: (
-    x:   $spacer-x,
-    y:   $spacer-y
-  ),
-  2: (
-    x:   ($spacer-x * 1.5),
-    y:   ($spacer-y * 1.5)
-  ),
-  3: (
-    x:   ($spacer-x * 3),
-    y:   ($spacer-y * 3)
-  )
+	0: (
+		x:   0,
+		y:   0
+ 	),
+	1: (
+		x:   $spacer-x,
+		y:   $spacer-y
+	),
+	2: (
+		x:   ($spacer-x * 1.5),
+		y:   ($spacer-y * 1.5)
+	),
+	3: (
+		x:   ($spacer-x * 3),
+		y:   ($spacer-y * 3)
+	)
 ) !default;
 $border-width:               1px !default;
 
@@ -105,16 +105,16 @@ $link-hover-decoration:      underline !default;
 // adapting to different screen sizes, for use in media queries.
 
 $grid-breakpoints: (
-  // Extra small screen / phone
-  xs: 0,
-  // Small screen / phone
-  sm: 544px,
-  // Medium screen / tablet
-  md: 768px,
-  // Large screen / desktop
-  lg: 992px,
-  // Extra large screen / wide desktop
-  xl: 1200px
+	// Extra small screen / phone
+	xs: 0,
+	// Small screen / phone
+	sm: 544px,
+	// Medium screen / tablet
+	md: 768px,
+	// Large screen / desktop
+	lg: 992px,
+	// Extra large screen / wide desktop
+	xl: 1200px
 ) !default;
 
 
@@ -123,10 +123,10 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 576px,
-  md: 720px,
-  lg: 940px,
-  xl: 1140px
+	sm: 576px,
+	md: 720px,
+	lg: 940px,
+	xl: 1140px
 ) !default;
 
 

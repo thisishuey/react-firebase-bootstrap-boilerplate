@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Spinner from '../icons/Spinner';
 
+
 class Todos extends Component {
 
 	render() {

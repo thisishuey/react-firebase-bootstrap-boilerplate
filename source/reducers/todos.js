@@ -5,6 +5,7 @@ import {
 	DELETE_TODO_REQUEST, DELETE_TODO_SUCCESS, DELETE_TODO_FAILURE
  } from '../actions'
 
+
 const initialState = {
 	isLoading: false,
 	todos: {},
