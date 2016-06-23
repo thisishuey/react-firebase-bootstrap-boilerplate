@@ -13,7 +13,7 @@ import Button from '../components/Button';
 class App extends Component {
 
 	componentDidMount() {
-		this.props.getTodos();
+		this.props.fetchTodos();
 	}
 
 	render() {
@@ -47,7 +47,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		getTodos: () => {
+		fetchTodos: () => {
 			dispatch(fetchTodos());
 		}
 	};
