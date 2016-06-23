@@ -10,7 +10,7 @@ let devToolsElement;
 
 if (process.env.NODE_ENV !== 'production') {
 	const DevTools = require('./containers/DevTools').default;
-	devToolsElement = (<DevTools />);
+	devToolsElement = <DevTools />;
 }
 
 render(
