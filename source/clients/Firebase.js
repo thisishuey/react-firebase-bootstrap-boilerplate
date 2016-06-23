@@ -17,21 +17,17 @@ class Firebase {
 	static read = path => firebase.database().ref(path);
 
 	static update = (path, value) => {
-		return new Promise((resolve, reject) => {
-			firebase
-				.database()
-				.ref(path)
-				.update(value);
-		});
+		return firebase
+			.database()
+			.ref(path)
+			.update(value);
 	}
 
 	static delete = path => {
-		return new Promise((resolve, reject) => {
-			firebase
-				.database()
-				.ref(path)
-				.remove();
-		});
+		return firebase
+			.database()
+			.ref(path)
+			.remove();
 	}
 
 }
