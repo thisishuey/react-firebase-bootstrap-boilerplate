@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-
 import classNames from '../utils/classNames';
-
 import { readTodos, createTodo, updateTodo, deleteTodo } from '../actions';
 
 import Navigation from '../components/Navigation';
