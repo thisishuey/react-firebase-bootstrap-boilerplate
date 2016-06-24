@@ -17,4 +17,5 @@ Setting up a free Firebase account (https://firebase.google.com) is recommended 
 * ~~Add redux dev tools~~
 * Add eslint
 * Add Flow
+* Add prod build functionality
 * Update README
