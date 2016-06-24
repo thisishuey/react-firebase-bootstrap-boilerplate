@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === 'production') {
 	createStoreWithMiddleware = compose(applyMiddleware(thunkMiddleware))(createStore);
 } else {
 	const { persistState } = require('redux-devtools');
-	const DevTools = require('../components/DevTools').default;
+	const DevTools = require('../containers/DevTools').default;
 	const getDebugSessionKey = () => {
 		const matches = window.location.href.match(/[?&]debug_session=([^&]+)\b/);
 		return (matches && matches.length > 0) ? matches[1] : null;

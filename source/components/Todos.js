@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import classNames from '../utils/classNames';
 
 import Spinner from '../icons/Spinner';
+import Todo from './Todo';
 
 
 class Todos extends Component {
@@ -9,12 +11,13 @@ class Todos extends Component {
 		const { todos } = this.props;
 		const loadingAnimation = todos.isLoading ? <Spinner /> : undefined;
 		const todosObject = todos.todos;
-		const todosList = <ul>{Object.keys(todosObject).map(key => <li key={key}>{todosObject[key].title}</li>)}</ul>;
+		const todosList = Object.keys(todosObject)
+			.map(key => <Todo key={key} todo={todosObject[key]} />);
 
 		return (
 			<div>
 				{loadingAnimation}
-				{todosList}
+				<div className={classNames('todos')}>{todosList}</div>
 			</div>
 		);
 	}

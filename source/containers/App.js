@@ -12,10 +12,10 @@ import Button from '../components/Button';
 class App extends Component {
 
 	componentDidMount() {
-		this.props.createTodo({ title: 'todo - ' + new Date() });
+		// this.props.createTodo({ title: 'todo - ' + new Date() });
 		this.props.readTodos();
-		this.props.updateTodo('-KKvLQIvaISybYy93l9Q', { title: 'todo - ' + new Date() });
-		this.props.deleteTodo('-KKvLQIvaISybYy93l9Q');
+		// this.props.updateTodo('-KKvLQIvaISybYy93l9Q', { title: 'todo - ' + new Date() });
+		// this.props.deleteTodo('-KKvLQIvaISybYy93l9Q');
 	}
 
 	render() {
