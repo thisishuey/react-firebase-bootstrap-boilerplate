@@ -50,10 +50,10 @@ const updateTodoRequest = () => ({ type: UPDATE_TODO_REQUEST });
 const updateTodoSuccess = () => ({ type: UPDATE_TODO_SUCCESS });
 const updateTodoFailure = error => ({ type: UPDATE_TODO_FAILURE, error });
 
-export function updateTodo(todoId, todo) {
+export function updateTodo(id, todo) {
 	return dispatch => {
 		dispatch(updateTodoRequest());
-		Firebase.update('todos/' + todoId, todo)
+		Firebase.update('todos/' + id, todo)
 			.then(dispatch(updateTodoSuccess()))
 			.catch(error => {
 				dispatch(updateTodoFailure(error))
@@ -70,10 +70,10 @@ const deleteTodoRequest = () => ({ type: DELETE_TODO_REQUEST });
 const deleteTodoSuccess = () => ({ type: DELETE_TODO_SUCCESS });
 const deleteTodoFailure = error => ({ type: DELETE_TODO_FAILURE, error });
 
-export function deleteTodo(todoId) {
+export function deleteTodo(id) {
 	return dispatch => {
 		dispatch(deleteTodoRequest());
-		Firebase.delete('todos/' + todoId)
+		Firebase.delete('todos/' + id)
 			.then(dispatch(deleteTodoSuccess()))
 			.catch(error => {
 				dispatch(deleteTodoFailure(error))

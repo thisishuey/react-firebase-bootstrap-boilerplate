@@ -24,15 +24,14 @@ class App extends Component {
 			<div>
 				<Navigation />
 				<Container>
-					<Todos todos={todos} />
 					<div className={classNames('starter-template')}>
 						<h1>Bootstrap starter template</h1>
 						<p className={classNames('lead')}>
 							Use this document as a way to quickly start any new project.<br />
 							All you get is this text and a mostly barebones HTML document.
 						</p>
-						<Button>Loading...</Button>
 					</div>
+					<Todos todos={todos} updateTodo={updateTodo} />
 				</Container>
 			</div>
 		);
@@ -51,8 +50,8 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		createTodo: todo => dispatch(createTodo(todo)),
 		readTodos: () => dispatch(readTodos()),
-		updateTodo: (todoId, todo) => dispatch(updateTodo(todoId, todo)),
-		deleteTodo: todoId => dispatch(deleteTodo(todoId))
+		updateTodo: (id, todo) => dispatch(updateTodo(id, todo)),
+		deleteTodo: id => dispatch(deleteTodo(id))
 	};
 };
 

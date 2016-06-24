@@ -3,7 +3,7 @@
 	@include make-col-span(6);
 	@include make-col-offset(3)
 
-	&.completed, &.completed:hover, &.completed:focus {
-		@extend .text-muted;
+	&.completed {
+		@extend .list-group-item-success;
 	}
 }
