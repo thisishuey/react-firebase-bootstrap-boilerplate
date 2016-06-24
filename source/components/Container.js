@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import classNames from '../utils/classNames';
 
 
-class Container extends Component {
-	render = () => <div className={classNames('container')}>{this.props.children}</div>;
-}
+const Container = props => <div className={classNames('container')}>{props.children}</div>;
 
-export default Container
+Container.propTypes = {
+	children: PropTypes.node
+};
+
+export default Container;

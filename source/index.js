@@ -1,21 +1,19 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { browserHistory } from 'react-router'
-import { syncHistoryWithStore } from 'react-router-redux'
+import { browserHistory, Router } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 import configureStore from './store/configureStore';
 import routes from './routes';
 
-import { Router } from 'react-router';
 
-
-const store = configureStore()
-const history = syncHistoryWithStore(browserHistory, store)
+const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
 
 let devToolsElement;
 
 if (process.env.NODE_ENV !== 'production') {
-	const DevTools = require('./containers/DevTools').default;
+	const DevTools = require('./containers/DevTools').default; // eslint-disable-line global-require
 	devToolsElement = <DevTools />;
 }
 

@@ -8,4 +8,4 @@ const rootReducer = combineReducers({
 	routing
 });
 
-export default rootReducer
+export default rootReducer;

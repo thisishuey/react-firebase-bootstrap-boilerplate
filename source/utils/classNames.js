@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import styles from '../scss/styles';
+import styles from '../scss/styles.scss';
 
 
-export default classNames.bind(styles)
+export default classNames.bind(styles);

@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import classNames from '../utils/classNames';
 
 
-class NavItem extends Component {
-	render = () => (
-		<li className={classNames('nav-item')}>
-			<a className={classNames('nav-link')} href={this.props.href}>{this.props.children}</a>
-		</li>
-	);
-}
+const NavItem = props => (
+	<li className={classNames('nav-item')}>
+		<a className={classNames('nav-link')} href={props.href}>{props.children}</a>
+	</li>
+);
 
-export default NavItem
+NavItem.propTypes = {
+	href: PropTypes.string,
+	children: PropTypes.node
+};
+
+export default NavItem;
