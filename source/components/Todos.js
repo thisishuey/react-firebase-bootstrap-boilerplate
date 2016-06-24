@@ -3,19 +3,25 @@ import classNames from '../utils/classNames';
 
 import Spinner from '../icons/Spinner';
 import Todo from './Todo';
+import TodoForm from './TodoForm';
 
 
 class Todos extends Component {
 	render() {
-		const { todos, updateTodo } = this.props;
-		const loadingAnimation = todos.isLoading ? <Spinner /> : undefined;
+		const { todos, createTodo, updateTodo } = this.props;
+		const loadingAnimation = todos.isLoading ? <div className={classNames('todo', 'center')}><Spinner /></div> : undefined;
 		const todosObject = todos.todos;
-		const todosList = Object.keys(todosObject).map(key => <Todo key={key} id={key} todo={todosObject[key]} updateTodo={updateTodo} />);
+		const todosList = todosObject ?
+			Object.keys(todosObject).map(key => <Todo key={key} id={key} todo={todosObject[key]} updateTodo={updateTodo} />) :
+			<div className={classNames('todo', 'error')}>No Todos available</div>;
 
 		return (
 			<div>
-				{loadingAnimation}
-				<div className={classNames('todos')}>{todosList}</div>
+				<div className={classNames('todos')}>
+					{loadingAnimation}
+					{todosList}
+					<TodoForm createTodo={createTodo} />
+				</div>
 			</div>
 		);
 	}
@@ -23,6 +29,7 @@ class Todos extends Component {
 
 Todos.propTypes = {
 	todos: PropTypes.object.isRequired,
+	createTodo: PropTypes.func.isRequired,
 	updateTodo: PropTypes.func.isRequired
 };
 

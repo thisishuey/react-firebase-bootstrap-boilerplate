@@ -6,14 +6,14 @@ class Todo extends Component {
 
 	onClick = event => {
 		const { id, todo, updateTodo } = this.props;
-		updateTodo(id, { ...todo, completed: !todo.completed, lastModified: new Date() });
+		updateTodo(id, { ...todo, completed: !todo.completed });
 	}
 
 	render = () => {
 		const { id, todo } = this.props;
 		return (
 			<button onClick={this.onClick} className={classNames('todo', { completed: todo.completed })}>
-				{todo.title} - {todo.lastModified}
+				{todo.text} - {todo.modified}
 			</button>
 		);
 	}

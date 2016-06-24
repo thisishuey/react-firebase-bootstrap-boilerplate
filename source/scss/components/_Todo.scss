@@ -7,6 +7,14 @@
 		@extend .list-group-item-success;
 	}
 
+	&.center {
+		@extend .text-xs-center;
+	}
+
+	&.error {
+		@extend .list-group-item-danger;
+	}
+
 	&:focus {
 		outline: none;
 	}

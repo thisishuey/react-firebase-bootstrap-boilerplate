@@ -11,8 +11,14 @@ const createTodoFailure = error => ({ type: CREATE_TODO_FAILURE, error });
 
 export function createTodo(todo) {
 	return dispatch => {
+		const newTodo = {
+			text: todo.text || 'New Todo',
+			completed: todo.completed || false,
+			created: new Date().valueOf(),
+			modified: new Date().valueOf()
+		}
 		dispatch(createTodoRequest());
-		Firebase.create('todos', todo)
+		Firebase.create('todos', newTodo)
 			.then(dispatch(createTodoSuccess()))
 			.catch(error => {
 				dispatch(createTodoFailure(error))
@@ -51,9 +57,15 @@ const updateTodoSuccess = () => ({ type: UPDATE_TODO_SUCCESS });
 const updateTodoFailure = error => ({ type: UPDATE_TODO_FAILURE, error });
 
 export function updateTodo(id, todo) {
+	const newTodo = {
+		text: todo.text || 'New Todo',
+		completed: todo.completed || false,
+		created: todo.created || new Date().valueOf(),
+		modified: new Date().valueOf()
+	}
 	return dispatch => {
 		dispatch(updateTodoRequest());
-		Firebase.update('todos/' + id, todo)
+		Firebase.update('todos/' + id, newTodo)
 			.then(dispatch(updateTodoSuccess()))
 			.catch(error => {
 				dispatch(updateTodoFailure(error))
