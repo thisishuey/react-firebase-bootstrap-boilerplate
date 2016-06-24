@@ -3,13 +3,10 @@ import { connect } from 'react-redux';
 import classNames from '../utils/classNames';
 import { readTodos, createTodo, updateTodo, deleteTodo } from '../actions';
 
-import Navigation from '../components/Navigation';
 import Todos from '../components/Todos';
-import Container from '../components/Container';
-import Button from '../components/Button';
 
 
-class App extends Component {
+class TodoPage extends Component {
 
 	componentDidMount() {
 		this.props.readTodos();
@@ -19,23 +16,20 @@ class App extends Component {
 		const { todos, createTodo, updateTodo, deleteTodo } = this.props;
 		return (
 			<div>
-				<Navigation />
-				<Container>
-					<div className={classNames('starter-template')}>
-						<h1>Bootstrap starter template</h1>
-						<p className={classNames('lead')}>
-							Use this document as a way to quickly start any new project.<br />
-							All you get is this text and a mostly barebones HTML document.
-						</p>
-					</div>
-					<Todos todos={todos} createTodo={createTodo} updateTodo={updateTodo} deleteTodo={deleteTodo} />
-				</Container>
+				<div className={classNames('starter-template')}>
+					<h1>Bootstrap starter template</h1>
+					<p className={classNames('lead')}>
+						Use this document as a way to quickly start any new project.<br />
+						All you get is this text and a mostly barebones HTML document.
+					</p>
+				</div>
+				<Todos todos={todos} createTodo={createTodo} updateTodo={updateTodo} deleteTodo={deleteTodo} />
 			</div>
 		);
 	}
 }
 
-App.propTypes = {
+TodoPage.propTypes = {
 	todos: PropTypes.object.isRequired
 };
 
@@ -52,4 +46,4 @@ const mapDispatchToProps = (dispatch) => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(TodoPage)
