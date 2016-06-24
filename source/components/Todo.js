@@ -20,7 +20,8 @@ class Todo extends Component {
 		const { id, todo } = this.props;
 		return (
 			<a href="#" onClick={this.handleToggle} className={classNames('todo', { completed: todo.completed })}>
-				{todo.text} - {todo.modified} <button onClick={this.handleDelete}>X</button>
+				<button className={classNames('btn', 'btn-danger', 'btn-sm', 'pull-right')} onClick={this.handleDelete}>X</button>
+				{todo.text} - {todo.modified}
 			</a>
 		);
 	}
