@@ -15,6 +15,7 @@ class Todo extends Component {
 
 	handleDelete = event => {
 		const { id, deleteTodo } = this.props;
+		event.preventDefault();
 		event.stopPropagation();
 		deleteTodo(id);
 	}
