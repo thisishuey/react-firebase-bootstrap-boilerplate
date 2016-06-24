@@ -31,7 +31,7 @@ class App extends Component {
 							All you get is this text and a mostly barebones HTML document.
 						</p>
 					</div>
-					<Todos todos={todos} updateTodo={updateTodo} />
+					<Todos todos={todos} />
 				</Container>
 			</div>
 		);
