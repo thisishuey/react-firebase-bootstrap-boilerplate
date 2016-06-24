@@ -1,10 +1,17 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import classNames from '../utils/classNames';
 
 
 const NavItem = props => (
 	<li className={classNames('nav-item')}>
-		<a className={classNames('nav-link')} href={props.href}>{props.children}</a>
+		<Link
+			className={classNames('nav-link')}
+			activeClassName={classNames('active')}
+			to={props.href}
+		>
+			{props.children}
+		</Link>
 	</li>
 );
 
