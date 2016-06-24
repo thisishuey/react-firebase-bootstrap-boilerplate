@@ -28,7 +28,6 @@ class Todo extends Component {
 				<h4>{todo.text}</h4>
 				<div>
 					<div className={classNames('pull-left')}><small><strong>Created:</strong> {moment(todo.created).fromNow()} | <strong>Last Modified:</strong> {moment(todo.modified).fromNow()}</small></div>
-					<div className={classNames('pull-right')}><small></small></div>
 				</div>
 			</a>
 		);
