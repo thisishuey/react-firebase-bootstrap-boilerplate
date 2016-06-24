@@ -19,7 +19,7 @@ class App extends Component {
 	}
 
 	render() {
-		const { todos } = this.props;
+		const { todos, updateTodo } = this.props;
 		return (
 			<div>
 				<Navigation />
@@ -31,7 +31,7 @@ class App extends Component {
 							All you get is this text and a mostly barebones HTML document.
 						</p>
 					</div>
-					<Todos todos={todos} />
+					<Todos todos={todos} updateTodo={updateTodo} />
 				</Container>
 			</div>
 		);

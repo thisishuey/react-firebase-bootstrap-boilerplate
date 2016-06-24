@@ -6,4 +6,8 @@
 	&.completed {
 		@extend .list-group-item-success;
 	}
+
+	&:focus {
+		outline: none;
+	}
 }

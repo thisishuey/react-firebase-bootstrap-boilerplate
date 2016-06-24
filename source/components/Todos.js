@@ -7,10 +7,10 @@ import Todo from './Todo';
 
 class Todos extends Component {
 	render() {
-		const { todos } = this.props;
+		const { todos, updateTodo } = this.props;
 		const loadingAnimation = todos.isLoading ? <Spinner /> : undefined;
 		const todosObject = todos.todos;
-		const todosList = Object.keys(todosObject).map(key => <Todo key={key} id={key} todo={todosObject[key]} />);
+		const todosList = Object.keys(todosObject).map(key => <Todo key={key} id={key} todo={todosObject[key]} updateTodo={updateTodo} />);
 
 		return (
 			<div>
@@ -22,7 +22,8 @@ class Todos extends Component {
 }
 
 Todos.propTypes = {
-	todos: PropTypes.object.isRequired
+	todos: PropTypes.object.isRequired,
+	updateTodo: PropTypes.func.isRequired
 };
 
 export default Todos
