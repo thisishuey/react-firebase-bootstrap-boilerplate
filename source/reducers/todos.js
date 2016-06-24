@@ -15,11 +15,11 @@ const initialState = {
 function todos(state = initialState, action) {
 	switch (action.type) {
 		case CREATE_TODO_REQUEST:
-			return state;
+			return { ...state, isLoading: true };
 		case CREATE_TODO_SUCCESS:
-			return { ...state, error: {} };
+			return { ...state, isLoading: false, error: {} };
 		case CREATE_TODO_FAILURE:
-			return { ...state, error: action.error };
+			return { ...state, isLoading: false, error: action.error };
 		case READ_TODOS_REQUEST:
 			return { ...state, isLoading: true };
 		case READ_TODOS_SUCCESS:
@@ -27,17 +27,17 @@ function todos(state = initialState, action) {
 		case READ_TODOS_FAILURE:
 			return { ...state, isLoading: false, todos: {}, error: action.error };
 		case UPDATE_TODO_REQUEST:
-			return state;
+			return { ...state, isLoading: true };
 		case UPDATE_TODO_SUCCESS:
-			return { ...state, error: {} };
+			return { ...state, isLoading: false, error: {} };
 		case UPDATE_TODO_FAILURE:
-			return { ...state, error: action.error };
+			return { ...state, isLoading: false, error: action.error };
 		case DELETE_TODO_REQUEST:
-			return state;
+			return { ...state, isLoading: true };
 		case DELETE_TODO_SUCCESS:
-			return { ...state, error: {} };
+			return { ...state, isLoading: false, error: {} };
 		case DELETE_TODO_FAILURE:
-			return { ...state, error: action.error };
+			return { ...state, isLoading: false, error: action.error };
 		default:
 			return state;
 	}
