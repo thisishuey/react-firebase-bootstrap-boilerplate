@@ -23,6 +23,6 @@ class Todos extends Component {
 
 Todos.propTypes = {
 	todos: PropTypes.object.isRequired
-}
+};
 
-export default Todos;
+export default Todos

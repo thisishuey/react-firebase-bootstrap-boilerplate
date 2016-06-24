@@ -40,7 +40,7 @@ class App extends Component {
 
 App.propTypes = {
 	todos: PropTypes.object.isRequired
-}
+};
 
 const mapStateToProps = state => ({
 	todos: state.todos
@@ -55,4 +55,4 @@ const mapDispatchToProps = (dispatch) => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App)

@@ -14,6 +14,6 @@ class Todo extends Component {
 Todo.propTypes = {
 	id: PropTypes.string.isRequired,
 	todo: PropTypes.object.isRequired
-}
+};
 
 export default Todo
