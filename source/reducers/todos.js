@@ -1,9 +1,4 @@
-import {
-	CREATE_TODO_REQUEST, CREATE_TODO_SUCCESS, CREATE_TODO_FAILURE,
-	READ_TODOS_REQUEST, READ_TODOS_SUCCESS, READ_TODOS_FAILURE,
-	UPDATE_TODO_REQUEST, UPDATE_TODO_SUCCESS, UPDATE_TODO_FAILURE,
-	DELETE_TODO_REQUEST, DELETE_TODO_SUCCESS, DELETE_TODO_FAILURE
-} from '../actions';
+import * as types from '../constants/ActionTypes';
 
 
 const initialState = {
@@ -14,29 +9,29 @@ const initialState = {
 
 function todos(state = initialState, action) {
 	switch (action.type) {
-		case CREATE_TODO_REQUEST:
+		case types.CREATE_TODO_REQUEST:
 			return { ...state, isLoading: true };
-		case CREATE_TODO_SUCCESS:
+		case types.CREATE_TODO_SUCCESS:
 			return { ...state, isLoading: false, error: {} };
-		case CREATE_TODO_FAILURE:
+		case types.CREATE_TODO_FAILURE:
 			return { ...state, isLoading: false, error: action.error };
-		case READ_TODOS_REQUEST:
+		case types.READ_TODOS_REQUEST:
 			return { ...state, isLoading: true };
-		case READ_TODOS_SUCCESS:
+		case types.READ_TODOS_SUCCESS:
 			return { ...state, isLoading: false, todos: action.todos, error: {} };
-		case READ_TODOS_FAILURE:
+		case types.READ_TODOS_FAILURE:
 			return { ...state, isLoading: false, todos: {}, error: action.error };
-		case UPDATE_TODO_REQUEST:
+		case types.UPDATE_TODO_REQUEST:
 			return { ...state, isLoading: true };
-		case UPDATE_TODO_SUCCESS:
+		case types.UPDATE_TODO_SUCCESS:
 			return { ...state, isLoading: false, error: {} };
-		case UPDATE_TODO_FAILURE:
+		case types.UPDATE_TODO_FAILURE:
 			return { ...state, isLoading: false, error: action.error };
-		case DELETE_TODO_REQUEST:
+		case types.DELETE_TODO_REQUEST:
 			return { ...state, isLoading: true };
-		case DELETE_TODO_SUCCESS:
+		case types.DELETE_TODO_SUCCESS:
 			return { ...state, isLoading: false, error: {} };
-		case DELETE_TODO_FAILURE:
+		case types.DELETE_TODO_FAILURE:
 			return { ...state, isLoading: false, error: action.error };
 		default:
 			return state;

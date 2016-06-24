@@ -1,13 +1,10 @@
 import Firebase from '../clients/Firebase';
+import * as types from '../constants/ActionTypes';
 
 
-export const CREATE_TODO_REQUEST = 'CREATE_TODO_REQUEST';
-export const CREATE_TODO_SUCCESS = 'CREATE_TODO_SUCCESS';
-export const CREATE_TODO_FAILURE = 'CREATE_TODO_FAILURE';
-
-const createTodoRequest = () => ({ type: CREATE_TODO_REQUEST });
-const createTodoSuccess = () => ({ type: CREATE_TODO_SUCCESS });
-const createTodoFailure = error => ({ type: CREATE_TODO_FAILURE, error });
+const createTodoRequest = () => ({ type: types.CREATE_TODO_REQUEST });
+const createTodoSuccess = () => ({ type: types.CREATE_TODO_SUCCESS });
+const createTodoFailure = error => ({ type: types.CREATE_TODO_FAILURE, error });
 
 export function createTodo(todo) {
 	return dispatch => {
@@ -27,13 +24,9 @@ export function createTodo(todo) {
 	};
 }
 
-export const READ_TODOS_REQUEST = 'READ_TODOS_REQUEST';
-export const READ_TODOS_SUCCESS = 'READ_TODOS_SUCCESS';
-export const READ_TODOS_FAILURE = 'READ_TODOS_FAILURE';
-
-const readTodosRequest = () => ({ type: READ_TODOS_REQUEST });
-const readTodosSuccess = todos => ({ type: READ_TODOS_SUCCESS, todos });
-const readTodosFailure = errors => ({ type: READ_TODOS_FAILURE, errors });
+const readTodosRequest = () => ({ type: types.READ_TODOS_REQUEST });
+const readTodosSuccess = todos => ({ type: types.READ_TODOS_SUCCESS, todos });
+const readTodosFailure = errors => ({ type: types.READ_TODOS_FAILURE, errors });
 
 export const readTodos = () => dispatch => {
 	dispatch(readTodosRequest());
@@ -46,13 +39,9 @@ export const readTodos = () => dispatch => {
 	});
 };
 
-export const UPDATE_TODO_REQUEST = 'UPDATE_TODO_REQUEST';
-export const UPDATE_TODO_SUCCESS = 'UPDATE_TODO_SUCCESS';
-export const UPDATE_TODO_FAILURE = 'UPDATE_TODO_FAILURE';
-
-const updateTodoRequest = () => ({ type: UPDATE_TODO_REQUEST });
-const updateTodoSuccess = () => ({ type: UPDATE_TODO_SUCCESS });
-const updateTodoFailure = error => ({ type: UPDATE_TODO_FAILURE, error });
+const updateTodoRequest = () => ({ type: types.UPDATE_TODO_REQUEST });
+const updateTodoSuccess = () => ({ type: types.UPDATE_TODO_SUCCESS });
+const updateTodoFailure = error => ({ type: types.UPDATE_TODO_FAILURE, error });
 
 export function updateTodo(id, todo) {
 	const newTodo = {
@@ -72,13 +61,9 @@ export function updateTodo(id, todo) {
 	};
 }
 
-export const DELETE_TODO_REQUEST = 'DELETE_TODO_REQUEST';
-export const DELETE_TODO_SUCCESS = 'DELETE_TODO_SUCCESS';
-export const DELETE_TODO_FAILURE = 'DELETE_TODO_FAILURE';
-
-const deleteTodoRequest = () => ({ type: DELETE_TODO_REQUEST });
-const deleteTodoSuccess = () => ({ type: DELETE_TODO_SUCCESS });
-const deleteTodoFailure = error => ({ type: DELETE_TODO_FAILURE, error });
+const deleteTodoRequest = () => ({ type: types.DELETE_TODO_REQUEST });
+const deleteTodoSuccess = () => ({ type: types.DELETE_TODO_SUCCESS });
+const deleteTodoFailure = error => ({ type: types.DELETE_TODO_FAILURE, error });
 
 export function deleteTodo(id) {
 	return dispatch => {

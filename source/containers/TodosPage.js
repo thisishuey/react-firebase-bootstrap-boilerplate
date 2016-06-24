@@ -1,12 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import classNames from '../utils/classNames';
-import {
-	readTodos as readTodosAction,
-	createTodo as createTodoAction,
-	updateTodo as updateTodoAction,
-	deleteTodo as deleteTodoAction
-} from '../actions';
+import * as actions from '../actions';
 
 import Todos from '../components/Todos';
 
@@ -47,10 +42,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	createTodo: todo => dispatch(createTodoAction(todo)),
-	readTodos: () => dispatch(readTodosAction()),
-	updateTodo: (id, todo) => dispatch(updateTodoAction(id, todo)),
-	deleteTodo: id => dispatch(deleteTodoAction(id))
+	createTodo: todo => dispatch(actions.createTodo(todo)),
+	readTodos: () => dispatch(actions.readTodos()),
+	updateTodo: (id, todo) => dispatch(actions.updateTodo(id, todo)),
+	deleteTodo: id => dispatch(actions.deleteTodo(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoPage);
