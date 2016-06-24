@@ -8,12 +8,12 @@ import TodoForm from './TodoForm';
 
 class Todos extends Component {
 	render() {
-		const { todos, createTodo, updateTodo } = this.props;
+		const { todos, createTodo, updateTodo, deleteTodo } = this.props;
 		const loadingAnimation = todos.isLoading ? <div className={classNames('todo', 'center')}><Spinner /></div> : undefined;
 		const todosObject = todos.todos;
 		const todosList = todosObject ?
-			Object.keys(todosObject).map(key => <Todo key={key} id={key} todo={todosObject[key]} updateTodo={updateTodo} />) :
-			<div className={classNames('todo', 'error')}>No Todos available</div>;
+			Object.keys(todosObject).map(key => <Todo key={key} id={key} todo={todosObject[key]} updateTodo={updateTodo} deleteTodo={deleteTodo} />) :
+			<div className={classNames('todo', 'center', 'error')}>No Todos available</div>;
 
 		return (
 			<div>
@@ -30,7 +30,8 @@ class Todos extends Component {
 Todos.propTypes = {
 	todos: PropTypes.object.isRequired,
 	createTodo: PropTypes.func.isRequired,
-	updateTodo: PropTypes.func.isRequired
+	updateTodo: PropTypes.func.isRequired,
+	deleteTodo: PropTypes.func.isRequired
 };
 
 export default Todos

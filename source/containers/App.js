@@ -12,13 +12,11 @@ import Button from '../components/Button';
 class App extends Component {
 
 	componentDidMount() {
-		// this.props.createTodo({ text: 'todo - ' + new Date() });
 		this.props.readTodos();
-		// this.props.deleteTodo('-KKvLQIvaISybYy93l9Q');
 	}
 
 	render() {
-		const { todos, createTodo, updateTodo } = this.props;
+		const { todos, createTodo, updateTodo, deleteTodo } = this.props;
 		return (
 			<div>
 				<Navigation />
@@ -30,7 +28,7 @@ class App extends Component {
 							All you get is this text and a mostly barebones HTML document.
 						</p>
 					</div>
-					<Todos todos={todos} createTodo={createTodo} updateTodo={updateTodo} />
+					<Todos todos={todos} createTodo={createTodo} updateTodo={updateTodo} deleteTodo={deleteTodo} />
 				</Container>
 			</div>
 		);

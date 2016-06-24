@@ -4,17 +4,24 @@ import classNames from '../utils/classNames';
 
 class Todo extends Component {
 
-	onClick = event => {
+	handleToggle = event => {
 		const { id, todo, updateTodo } = this.props;
+		event.preventDefault();
 		updateTodo(id, { ...todo, completed: !todo.completed });
+	}
+
+	handleDelete = event => {
+		const { id, deleteTodo } = this.props;
+		event.stopPropagation();
+		deleteTodo(id);
 	}
 
 	render = () => {
 		const { id, todo } = this.props;
 		return (
-			<button onClick={this.onClick} className={classNames('todo', { completed: todo.completed })}>
-				{todo.text} - {todo.modified}
-			</button>
+			<a href="#" onClick={this.handleToggle} className={classNames('todo', { completed: todo.completed })}>
+				{todo.text} - {todo.modified} <button onClick={this.handleDelete}>X</button>
+			</a>
 		);
 	}
 }
@@ -22,7 +29,8 @@ class Todo extends Component {
 Todo.propTypes = {
 	id: PropTypes.string.isRequired,
 	todo: PropTypes.object.isRequired,
-	updateTodo: PropTypes.func.isRequired
+	updateTodo: PropTypes.func.isRequired,
+	deleteTodo: PropTypes.func.isRequired
 };
 
 export default Todo
