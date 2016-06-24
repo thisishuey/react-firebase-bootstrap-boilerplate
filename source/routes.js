@@ -1,9 +1,10 @@
 import React from 'react'
 import { Route, IndexRedirect } from 'react-router'
 
-import App from './containers/App'
-import UserPage from './components/AboutPage'
-import RepoPage from './components/ContactPage'
+import App from './components/App';
+import AboutPage from './components/AboutPage';
+import ContactPage from './components/ContactPage';
+import TodosPage from './containers/TodosPage';
 
 export default (
 	<Route path="/" component={App}>

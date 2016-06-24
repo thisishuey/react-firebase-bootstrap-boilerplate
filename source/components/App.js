@@ -10,15 +10,18 @@ import TodosPage from '../containers/TodosPage.js'
 
 class App extends Component {
 	render() {
+		const { children } = this.props;
 		return (
 			<div>
 				<Navigation />
-				<Container>
-					<TodosPage />
-				</Container>
+				<Container>{children}</Container>
 			</div>
 		);
 	}
+}
+
+App.propTypes = {
+	children: PropTypes.node
 }
 
 export default App
