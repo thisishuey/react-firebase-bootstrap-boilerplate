@@ -11,8 +11,11 @@ class TodoForm extends Component {
 
 	handleSubmit = event => {
 		const { createTodo } = this.props;
+		const { text } = this.state;
 		event.preventDefault();
-		createTodo({ text: this.state.text });
+		if (text != '') {
+			createTodo({ text });
+		}
 		this.setState({ text: '' });
 	}
 
