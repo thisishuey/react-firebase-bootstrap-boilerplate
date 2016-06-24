@@ -15,7 +15,7 @@ Setting up a free Firebase account (https://firebase.google.com) is recommended 
 * ~~Add react-router~~ - https://github.com/reactjs/redux/tree/master/examples/real-world
 * Add TDD setup - https://github.com/reactjs/redux/tree/master/examples/todomvc
 * ~~Add redux dev tools~~
-* Add eslint
+* ~~Add eslint~~
 * Add Flow
 * Add prod build functionality
 * Update README

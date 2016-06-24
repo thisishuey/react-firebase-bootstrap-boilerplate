@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import classNames from '../utils/classNames';
 
 
-class Navbar extends Component {
-	render = () => {
-		return <nav className={classNames('navbar', 'navbar-fixed-top', 'navbar-dark', 'bg-inverse')}>{this.props.children}</nav>;
-	};
-}
+const Navbar = props => (
+	<nav className={classNames('navbar', 'navbar-fixed-top', 'navbar-dark', 'bg-inverse')}>{props.children}</nav>
+);
 
-export default Navbar
+Navbar.propTypes = {
+	children: PropTypes.node
+};
+
+export default Navbar;

@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import classNames from '../utils/classNames';
 
 import Spinner from '../icons/Spinner';
@@ -6,26 +6,27 @@ import Todo from './Todo';
 import TodoForm from './TodoForm';
 
 
-class Todos extends Component {
-	render() {
-		const { todos, createTodo, updateTodo, deleteTodo } = this.props;
-		const loadingAnimation = todos.isLoading ? <div className={classNames('todo', 'center')}><Spinner /></div> : undefined;
-		const todosObject = todos.todos;
-		const todosList = todosObject ?
-			Object.keys(todosObject).map(key => <Todo key={key} id={key} todo={todosObject[key]} updateTodo={updateTodo} deleteTodo={deleteTodo} />) :
-			<div className={classNames('todo', 'center', 'error')}>No Todos available</div>;
+const Todos = props => {
+	const { todos, createTodo, updateTodo, deleteTodo } = props;
+	const loadingAnimation = todos.isLoading ?
+		<div className={classNames('todo', 'center')}><Spinner /></div> :
+		undefined;
+	const todosObject = todos.todos;
+	const todosList = todosObject ?
+		Object.keys(todosObject).map(key => (
+			<Todo key={key} id={key} todo={todosObject[key]} updateTodo={updateTodo} deleteTodo={deleteTodo} />
+		)) : <div className={classNames('todo', 'center', 'error')}>No Todos available</div>;
 
-		return (
-			<div>
-				<div className={classNames('todos')}>
-					{loadingAnimation}
-					{todosList}
-					<TodoForm createTodo={createTodo} />
-				</div>
+	return (
+		<div>
+			<div className={classNames('todos')}>
+				{loadingAnimation}
+				{todosList}
+				<TodoForm createTodo={createTodo} />
 			</div>
-		);
-	}
-}
+		</div>
+	);
+};
 
 Todos.propTypes = {
 	todos: PropTypes.object.isRequired,
@@ -34,4 +35,4 @@ Todos.propTypes = {
 	deleteTodo: PropTypes.func.isRequired
 };
 
-export default Todos
+export default Todos;

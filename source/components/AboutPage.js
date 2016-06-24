@@ -1,29 +1,15 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import classNames from '../utils/classNames';
 
-import Navigation from '../components/Navigation';
-import Container from '../components/Container';
 
+const AboutPage = () => (
+	<div className={classNames('starter-template')}>
+		<h1>About</h1>
+		<p className={classNames('lead')}>
+			Use this document as a way to quickly start any new project.<br />
+			All you get is this text and a mostly barebones HTML document.
+		</p>
+	</div>
+);
 
-class AboutPage extends Component {
-
-	render() {
-		const { todos, createTodo, updateTodo, deleteTodo } = this.props;
-		return (
-			<div>
-				<Navigation />
-				<Container>
-					<div className={classNames('starter-template')}>
-						<h1>About</h1>
-						<p className={classNames('lead')}>
-							Use this document as a way to quickly start any new project.<br />
-							All you get is this text and a mostly barebones HTML document.
-						</p>
-					</div>
-				</Container>
-			</div>
-		);
-	}
-}
-
-export default AboutPage
+export default AboutPage;

@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classNames from '../utils/classNames';
 
 
-class Spinner extends Component {
-	render = () => <i className={classNames('fa', 'fa-close')} />;
-}
+const Close = () => <i className={classNames('fa', 'fa-close')} />;
 
-export default Spinner
+export default Close;

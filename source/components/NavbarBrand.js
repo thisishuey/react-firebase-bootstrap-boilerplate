@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import classNames from '../utils/classNames';
 
 
-class NavbarBrand extends Component {
-	render = () => <a className={classNames('navbar-brand')} href={this.props.href}>{this.props.children}</a>;
-}
+const NavbarBrand = props => <a className={classNames('navbar-brand')} href={props.href}>{props.children}</a>;
 
-export default NavbarBrand
+NavbarBrand.propTypes = {
+	href: PropTypes.string,
+	children: PropTypes.node
+};
+
+export default NavbarBrand;

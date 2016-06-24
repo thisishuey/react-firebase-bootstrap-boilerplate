@@ -21,13 +21,21 @@ class Todo extends Component {
 	}
 
 	render = () => {
-		const { id, todo } = this.props;
+		const { todo } = this.props;
 		return (
 			<a href="#" onClick={this.handleToggle} className={classNames('todo', { completed: todo.completed })}>
-				<button className={classNames('btn', 'btn-danger', 'btn-sm', 'pull-right')} onClick={this.handleDelete}><Close /></button>
+				<button
+					className={classNames('btn', 'btn-danger', 'btn-sm', 'pull-right')}
+					onClick={this.handleDelete}><Close /></button>
 				<h4>{todo.text}</h4>
 				<div>
-					<div className={classNames('pull-left')}><small><strong>Created:</strong> {moment(todo.created).fromNow()} | <strong>Last Modified:</strong> {moment(todo.modified).fromNow()}</small></div>
+					<div className={classNames('pull-left')}>
+						<small>
+							<strong>Created:</strong> {moment(todo.created).fromNow()}
+							{' | '}
+							<strong>Last Modified:</strong> {moment(todo.modified).fromNow()}
+						</small>
+					</div>
 				</div>
 			</a>
 		);
@@ -41,4 +49,4 @@ Todo.propTypes = {
 	deleteTodo: PropTypes.func.isRequired
 };
 
-export default Todo
+export default Todo;

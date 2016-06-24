@@ -1,7 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import classNames from '../utils/classNames';
-import { readTodos, createTodo, updateTodo, deleteTodo } from '../actions';
+import {
+	readTodos as readTodosAction,
+	createTodo as createTodoAction,
+	updateTodo as updateTodoAction,
+	deleteTodo as deleteTodoAction
+} from '../actions';
 
 import Todos from '../components/Todos';
 
@@ -30,20 +35,22 @@ class TodoPage extends Component {
 }
 
 TodoPage.propTypes = {
-	todos: PropTypes.object.isRequired
+	todos: PropTypes.object.isRequired,
+	createTodo: PropTypes.func.isRequired,
+	readTodos: PropTypes.func.isRequired,
+	updateTodo: PropTypes.func.isRequired,
+	deleteTodo: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
 	todos: state.todos
 });
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		createTodo: todo => dispatch(createTodo(todo)),
-		readTodos: () => dispatch(readTodos()),
-		updateTodo: (id, todo) => dispatch(updateTodo(id, todo)),
-		deleteTodo: id => dispatch(deleteTodo(id))
-	};
-};
+const mapDispatchToProps = (dispatch) => ({
+	createTodo: todo => dispatch(createTodoAction(todo)),
+	readTodos: () => dispatch(readTodosAction()),
+	updateTodo: (id, todo) => dispatch(updateTodoAction(id, todo)),
+	deleteTodo: id => dispatch(deleteTodoAction(id))
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoPage)
+export default connect(mapStateToProps, mapDispatchToProps)(TodoPage);
