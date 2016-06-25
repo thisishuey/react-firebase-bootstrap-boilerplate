@@ -10,7 +10,9 @@ class Todo extends Component {
 
 	constructor(props: Object) {
 		super(props);
+		/* $FlowIssue: Not sure why flow can't handle this */
 		this.handleToggle = this.handleToggle.bind(this);
+		/* $FlowIssue: Not sure why flow can't handle this */
 		this.handleDelete = this.handleDelete.bind(this);
 	}
 

@@ -8,7 +8,9 @@ class TodoForm extends Component {
 	constructor(props: Object, context: Object) {
 		super(props, context);
 		this.state = { text: '' };
+		/* $FlowIssue: Not sure why flow can't handle this */
 		this.handleSubmit = this.handleSubmit.bind(this);
+		/* $FlowIssue: Not sure why flow can't handle this */
 		this.handleChange = this.handleChange.bind(this);
 	}
 
