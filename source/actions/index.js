@@ -1,13 +1,14 @@
+/* @flow */
 import Firebase from '../clients/Firebase';
 import * as types from '../constants/ActionTypes';
 
 
 const createTodoRequest = () => ({ type: types.CREATE_TODO_REQUEST });
 const createTodoSuccess = () => ({ type: types.CREATE_TODO_SUCCESS });
-const createTodoFailure = error => ({ type: types.CREATE_TODO_FAILURE, error });
+const createTodoFailure = (error: Error) => ({ type: types.CREATE_TODO_FAILURE, error });
 
-export function createTodo(todo) {
-	return dispatch => {
+export function createTodo(todo: Object) {
+	return (dispatch: Function) => {
 		const newTodo = {
 			text: todo.text || 'New Todo',
 			completed: todo.completed || false,
@@ -17,7 +18,7 @@ export function createTodo(todo) {
 		dispatch(createTodoRequest());
 		Firebase.create('todos', newTodo)
 			.then(dispatch(createTodoSuccess()))
-			.catch(error => {
+			.catch((error: Error) => {
 				dispatch(createTodoFailure(error));
 				throw error;
 			});
@@ -25,12 +26,12 @@ export function createTodo(todo) {
 }
 
 const readTodosRequest = () => ({ type: types.READ_TODOS_REQUEST });
-const readTodosSuccess = todos => ({ type: types.READ_TODOS_SUCCESS, todos });
-const readTodosFailure = errors => ({ type: types.READ_TODOS_FAILURE, errors });
+const readTodosSuccess = (todos: Object) => ({ type: types.READ_TODOS_SUCCESS, todos });
+const readTodosFailure = (error: Error) => ({ type: types.READ_TODOS_FAILURE, error });
 
-export const readTodos = () => dispatch => {
+export const readTodos = () => (dispatch: Function) => {
 	dispatch(readTodosRequest());
-	Firebase.read('todos').on('value', response => {
+	Firebase.read('todos').on('value', (response: Object) => {
 		if (response !== null) {
 			dispatch(readTodosSuccess(response.val()));
 		} else {
@@ -41,20 +42,20 @@ export const readTodos = () => dispatch => {
 
 const updateTodoRequest = () => ({ type: types.UPDATE_TODO_REQUEST });
 const updateTodoSuccess = () => ({ type: types.UPDATE_TODO_SUCCESS });
-const updateTodoFailure = error => ({ type: types.UPDATE_TODO_FAILURE, error });
+const updateTodoFailure = (error: Error) => ({ type: types.UPDATE_TODO_FAILURE, error });
 
-export function updateTodo(id, todo) {
+export function updateTodo(id: string, todo: Object) {
 	const newTodo = {
 		text: todo.text || 'New Todo',
 		completed: todo.completed || false,
 		created: todo.created || new Date().valueOf(),
 		modified: new Date().valueOf()
 	};
-	return dispatch => {
+	return (dispatch: Function) => {
 		dispatch(updateTodoRequest());
 		Firebase.update(`todos/${id}`, newTodo)
 			.then(dispatch(updateTodoSuccess()))
-			.catch(error => {
+			.catch((error: Error) => {
 				dispatch(updateTodoFailure(error));
 				throw error;
 			});
@@ -63,14 +64,14 @@ export function updateTodo(id, todo) {
 
 const deleteTodoRequest = () => ({ type: types.DELETE_TODO_REQUEST });
 const deleteTodoSuccess = () => ({ type: types.DELETE_TODO_SUCCESS });
-const deleteTodoFailure = error => ({ type: types.DELETE_TODO_FAILURE, error });
+const deleteTodoFailure = (error: Error) => ({ type: types.DELETE_TODO_FAILURE, error });
 
-export function deleteTodo(id) {
-	return dispatch => {
+export function deleteTodo(id: string) {
+	return (dispatch: Function) => {
 		dispatch(deleteTodoRequest());
 		Firebase.delete(`todos/${id}`)
 			.then(dispatch(deleteTodoSuccess()))
-			.catch(error => {
+			.catch((error: Error) => {
 				dispatch(deleteTodoFailure(error));
 				throw error;
 			});

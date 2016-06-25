@@ -1,3 +1,4 @@
+/* @flow */
 import React, { Component, PropTypes } from 'react';
 import moment from 'moment';
 import classNames from '../utils/classNames';
@@ -7,26 +8,37 @@ import Close from '../icons/Close';
 
 class Todo extends Component {
 
-	handleToggle = event => {
+	constructor(props: Object) {
+		super(props);
+		/* $FlowIssue: Not sure why flow can't handle this */
+		this.handleToggle = this.handleToggle.bind(this);
+		/* $FlowIssue: Not sure why flow can't handle this */
+		this.handleDelete = this.handleDelete.bind(this);
+	}
+
+	handleToggle(event: Event) {
 		const { id, todo, updateTodo } = this.props;
 		event.preventDefault();
 		updateTodo(id, { ...todo, completed: !todo.completed });
 	}
 
-	handleDelete = event => {
+	handleDelete(event: Event) {
 		const { id, deleteTodo } = this.props;
 		event.preventDefault();
 		event.stopPropagation();
 		deleteTodo(id);
 	}
 
-	render = () => {
+	render() {
 		const { todo } = this.props;
 		return (
 			<a href="#" onClick={this.handleToggle} className={classNames('todo', { completed: todo.completed })}>
 				<button
 					className={classNames('btn', 'btn-danger', 'btn-sm', 'pull-right')}
-					onClick={this.handleDelete}><Close /></button>
+					onClick={this.handleDelete}
+				>
+					<Close />
+				</button>
 				<h4>{todo.text}</h4>
 				<div>
 					<div className={classNames('pull-left')}>

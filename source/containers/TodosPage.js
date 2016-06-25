@@ -1,3 +1,4 @@
+/* @flow */
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import classNames from '../utils/classNames';
@@ -37,15 +38,15 @@ TodoPage.propTypes = {
 	deleteTodo: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: Object) => ({
 	todos: state.todos
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	createTodo: todo => dispatch(actions.createTodo(todo)),
+	createTodo: (todo: Object) => dispatch(actions.createTodo(todo)),
 	readTodos: () => dispatch(actions.readTodos()),
-	updateTodo: (id, todo) => dispatch(actions.updateTodo(id, todo)),
-	deleteTodo: id => dispatch(actions.deleteTodo(id))
+	updateTodo: (id: string, todo: Object) => dispatch(actions.updateTodo(id, todo)),
+	deleteTodo: (id: string) => dispatch(actions.deleteTodo(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoPage);
