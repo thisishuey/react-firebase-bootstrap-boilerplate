@@ -1,12 +1,13 @@
+/* @flow */
 import React, { PropTypes } from 'react';
 import classNames from '../utils/classNames';
 
 import Spinner from '../icons/Spinner';
-import Todo from './Todo';
-import TodoForm from './TodoForm';
+import Todo from '../containers/Todo';
+import TodoForm from '../containers/TodoForm';
 
 
-const Todos = props => {
+const Todos = (props: Object) => {
 	const { todos, createTodo, updateTodo, deleteTodo } = props;
 	const loadingAnimation = todos.isLoading ?
 		<div className={classNames('todo', 'center')}><Spinner /></div> :

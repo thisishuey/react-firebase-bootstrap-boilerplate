@@ -1,8 +1,9 @@
+/* @flow */
 import React, { PropTypes } from 'react';
 import classNames from '../utils/classNames';
 
 
-const Navbar = props => (
+const Navbar = (props: Object) => (
 	<nav className={classNames('navbar', 'navbar-fixed-top', 'navbar-dark', 'bg-inverse')}>{props.children}</nav>
 );
 

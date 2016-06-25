@@ -1,3 +1,4 @@
+/* @flow */
 import { compose, createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import rootReducer from '../reducers';
@@ -21,6 +22,6 @@ if (process.env.NODE_ENV === 'production') {
 	)(createStore);
 }
 
-export default function configureStore(initialState) {
+export default function configureStore(initialState: Object = {}) {
 	return createStoreWithMiddleware(rootReducer, initialState);
 }

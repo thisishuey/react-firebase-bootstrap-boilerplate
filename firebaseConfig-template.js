@@ -1,3 +1,4 @@
+/* @flow */
 const config = {
 	apiKey: '',
 	authDomain: '',

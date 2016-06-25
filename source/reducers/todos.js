@@ -1,3 +1,4 @@
+/* @flow */
 import * as types from '../constants/ActionTypes';
 
 
@@ -7,7 +8,7 @@ const initialState = {
 	error: {}
 };
 
-function todos(state = initialState, action) {
+function todos(state: Object = initialState, action: Object) {
 	switch (action.type) {
 		case types.CREATE_TODO_REQUEST:
 			return { ...state, isLoading: true };
