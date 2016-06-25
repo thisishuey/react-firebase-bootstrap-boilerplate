@@ -8,6 +8,12 @@ import Close from '../icons/Close';
 
 class Todo extends Component {
 
+	constructor(props: Object) {
+		super(props);
+		this.handleToggle = this.handleToggle.bind(this);
+		this.handleDelete = this.handleDelete.bind(this);
+	}
+
 	handleToggle(event: Event) {
 		const { id, todo, updateTodo } = this.props;
 		event.preventDefault();

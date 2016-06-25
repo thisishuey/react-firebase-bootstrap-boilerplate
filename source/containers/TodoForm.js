@@ -8,6 +8,8 @@ class TodoForm extends Component {
 	constructor(props: Object, context: Object) {
 		super(props, context);
 		this.state = { text: '' };
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 	}
 
 	state: {
