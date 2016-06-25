@@ -31,8 +31,14 @@ class TodoForm extends Component {
 				</label>
 				<div className={classNames('col-xs-6')}>
 					<input
-						type="text" id="todoText" className={classNames('form-control')} value={this.state.text}
-						onChange={this.handleChange} placeholder="Pick up milk" autoFocus />
+						type="text"
+						id="todoText"
+						className={classNames('form-control')}
+						value={this.state.text}
+						onChange={this.handleChange}
+						placeholder="Pick up milk"
+						autoFocus
+					/>
 				</div>
 				<div className={classNames('col-xs-3')}>
 					<button type="submit" className={classNames('btn', 'btn-primary')}>Create</button>
