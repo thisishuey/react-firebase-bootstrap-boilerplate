@@ -1,16 +1,15 @@
 /* eslint no-console: 0 */
 
 const autoprefixer = require('autoprefixer');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
 const PROD = process.env.NODE_ENV === 'production';
 
 const sassLoaders = [
-	'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-	'postcss-loader',
-	`sass-loader?indentedSyntax=sass&includePaths[]=${path.join(__dirname, 'source')}`
+	'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+	'postcss',
+	'sass'
 ];
 
 const config = {
@@ -29,23 +28,23 @@ const config = {
 			loader: 'babel'
 		}, {
 			test: /\.(sass|scss)$/,
-			loader: ExtractTextWebpackPlugin.extract('style-loader', sassLoaders.join('!'))
+			loaders: ['style', sassLoaders.join('!')]
 		}, {
 			test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-			loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+			loader: 'url?limit=10000&mimetype=application/font-woff'
 		}, {
 			test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-			loader: 'file-loader'
+			loader: 'file'
 		}],
 		preLoaders: [{
 			test: /\.js$/,
-			loader: 'eslint-loader',
-			exclude: [/vendor/]
+			loader: 'eslint'
 		}]
 	},
-	plugins: [
-		new ExtractTextWebpackPlugin('[name].css')
-	],
+	sassLoader: {
+		includePaths: [path.resolve(__dirname, 'source')],
+		indentedSyntax: 'sass'
+	},
 	postcss: [
 		autoprefixer({
 			browsers: ['last 2 versions']
