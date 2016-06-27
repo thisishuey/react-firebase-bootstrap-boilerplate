@@ -9,18 +9,27 @@ import TodoForm from '../containers/TodoForm';
 
 const Todos = (props: Object) => {
 	const { todos, createTodo, updateTodo, deleteTodo } = props;
+	const todoClassNames = [
+		'todo',
+		'col-xs-12',
+		'col-md-8',
+		'col-md-offset-2',
+		'col-lg-6',
+		'col-lg-offset-3',
+		'center'
+	];
 	const loadingAnimation = todos.isLoading ?
-		<div className={classNames('todo', 'center')}><Spinner /></div> :
+		<div className={classNames(todoClassNames)}><Spinner /></div> :
 		undefined;
 	const todosObject = todos.todos;
 	const todosList = todosObject ?
 		Object.keys(todosObject).map(key => (
 			<Todo key={key} id={key} todo={todosObject[key]} updateTodo={updateTodo} deleteTodo={deleteTodo} />
-		)) : <div className={classNames('todo', 'center', 'error')}>No Todos available</div>;
+		)) : <div className={classNames(todoClassNames, 'error')}>No Todos available</div>;
 
 	return (
 		<div>
-			<div className={classNames('todos')}>
+			<div className={classNames('todos', 'row')}>
 				{loadingAnimation}
 				{todosList}
 				<TodoForm createTodo={createTodo} />

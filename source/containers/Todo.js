@@ -31,8 +31,17 @@ class Todo extends Component {
 
 	render() {
 		const { todo } = this.props;
+		const todoClassNames = [
+			'todo',
+			'col-xs-12',
+			'col-md-8',
+			'col-md-offset-2',
+			'col-lg-6',
+			'col-lg-offset-3',
+			{ completed: todo.completed }
+		];
 		return (
-			<a href="#" onClick={this.handleToggle} className={classNames('todo', { completed: todo.completed })}>
+			<a href="#" onClick={this.handleToggle} className={classNames(todoClassNames)}>
 				<button
 					className={classNames('btn', 'btn-danger', 'btn-sm', 'pull-right')}
 					onClick={this.handleDelete}

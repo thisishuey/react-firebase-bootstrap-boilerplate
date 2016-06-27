@@ -36,8 +36,16 @@ class TodoForm extends Component {
 	}
 
 	render() {
+		const formClassNames = [
+			'todo',
+			'col-xs-12',
+			'col-md-8',
+			'col-md-offset-2',
+			'col-lg-6',
+			'col-lg-offset-3',
+		];
 		return (
-			<form onSubmit={this.handleSubmit} className={classNames('todo')}>
+			<form onSubmit={this.handleSubmit} className={classNames(formClassNames)}>
 				<div className={classNames('form-group', 'row')}>
 					<label htmlFor="todoText" className={classNames('col-xs-3', 'form-control-label', 'text-xs-right')}>
 						Todo:
